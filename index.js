@@ -1,24 +1,20 @@
-const menu = document.querySelector(".menu-list");
-const menuItems = document.querySelectorAll(".menuItem");
-const hamburger = document.querySelector(".menu-button");
-const closeIcon = document.querySelector(".closeIcon");
-const menuIcon = document.querySelector(".menuIcon");
-menuItems.forEach(
-    function (menuItem) {
-        menuItem.addEventListener("click", toggleMenu);
-    }
-)
+const hamburgerBnt = document.querySelector('.menu-button')
+const menuList = document.querySelector('.menu-list')
 
-function toggleMenu() {
-    if (menu.classList.contains("showMenu")) {
-        menu.classList.remove("showMenu");
-        closeIcon.style.display = "none";
-        menuIcon.style.display = "block";
-    } else {
-        menu.classList.add("showMenu");
-        closeIcon.style.display = "block";
-        menuIcon.style.display = "none";
-    }
+const activeFunction = () => {
+    menuList.addEventListener('click', menuHide)
+    hamburgerBnt.addEventListener('click', showMenu)
 }
 
-hamburger.addEventListener("click", toggleMenu);
+const showMenu = () => {
+    if (hamburgerBnt.checked) {
+        menuList.style.left = '0'
+    } else {
+        menuList.style.left = '-100%'
+    }
+}
+const menuHide = () => {
+    menuList.style.left = '-100%'
+}
+
+document.addEventListener('DOMContentLoaded', activeFunction)

@@ -10,65 +10,107 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/5b34c87937.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Maciej Dąbrowski CV</title>
   </head>
   <body>
-    <div class="wrapper">
-      <header id="home" class="home">
-        <div class="logo"><img src="" alt="" /></div>
-        <div class="menu-hamburger">
+    <div class="wrapper" id="home">
+      <header class="home">
+        <div>
           <div class="menu">
             <ul class="menu-list">
               <li class="menu-item"><a href="#home">Home</a></li>
               <li class="menu-item">
-                <a href="#professional">Umięjętności</a>
+                <a href="#professional">Umiejętności</a>
               </li>
               <li class="menu-item"><a href="#experience">Doświadczenie</a></li>
               <li class="menu-item"><a href="#portfolio">Portfolio</a></li>
               <li class="menu-item"><a href="#contact">Kontakt</a></li>
             </ul>
           </div>
-          <div class="menu-button">&#9776;</div>
+          <label for="checkMenu"
+            ><i class="fa-solid fa-bars menu-button-icon"></i
+          ></label>
+          <input type="checkbox" class="menu-button" id="checkMenu" />
+        </div>
+        <div class="home-logo">
+          <div class="logo"></div>
         </div>
       </header>
       <main>
-        <section class="about_me">
-          <h1>Cześć jestem Maciek Dąbrowski</h1>
-          <p>Frontend Developer</p>
-          <div class="about_me_description">
+        <section class="about-me">
+          <div class="about-me-name">
+            <h1>
+              <span>Cześć, </span>jestem <br />
+              Maciej Dąbrowski
+            </h1>
+            <p class="about-me-name-profession">Frontend Developer</p>
+          </div>
+          <div class="about-me-description">
+            <p><b>Trochę o mnie.</b></p>
             <p>
-              Jestem pracowity, lubię poznawać nowe rzeczy. Jestem chętny do
-              nauki i nie boję się wyzwań. Zawsze realizuje postawione cele.
-              Moją pasją jest motoryacja, programowanie i jazda na rowerze.
+              Jestem <b>pracowity</b>, lubię poznawać nowe rzeczy. Jestem
+              <b>chętny do nauki</b> i nie boję się wyzwań.
+              <b>Zawsze realizuje</b> postawione <b>cele</b>. Moją pasją jest
+              motoryacja, programowanie i jazda na rowerze.
             </p>
           </div>
         </section>
         <section class="professional" id="professional">
-          <h2 class="professional_title">Umięjętności</h2>
-          <div class="professional_list">
-            <ul class="professional_list_name">
-              <li>JavaScript</li>
-              <li>HTML & CSS</li>
-              <li>Excel</li>
-              <li>SQL</li>
-            </ul>
-            <ul class="professional_list_desc">
-              <li>Junior</li>
-              <li>Junior</li>
-              <li>Junior</li>
-              <li>Junior</li>
-            </ul>
+          <div class="professional-shadow">
+            <div class="professional-shadow-box">
+              <h2 class="professional-title">Umięjętności</h2>
+              <p>Mój poziom zaznajomienia z software</p>
+              <div class="professional-list">
+                <div class="professional-list-container">
+                  <div>
+                    <p class="professional-list-name">JavaScript</p>
+                    <div class="professional-list-bar">
+                      <div class="js"></div>
+                    </div>
+                    <p>60%</p>
+                  </div>
+                  <div>
+                    <p class="professional-list-name">HTML & CSS</p>
+                    <div class="professional-list-bar">
+                      <div class="html"></div>
+                    </div>
+                    <p>80%</p>
+                  </div>
+                  <div>
+                    <p class="professional-list-name">Excel</p>
+                    <div class="professional-list-bar">
+                      <div class="excel"></div>
+                    </div>
+                    <p>80%</p>
+                  </div>
+                  <div>
+                    <p class="professional-list-name">SQL</p>
+                    <div class="professional-list-bar">
+                      <div class="sql"></div>
+                    </div>
+                    <p>60%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section class="experience" id="experience">
-          <div class="experience_timeline">
-            <div class="timeline_container right">
-              <div class="content">
-                <p class="content_time">Czas: 09.2022-obecnie</p>
-                <p>Stanowisko: Konsultant ds.Sprzedaży</p>
-                <p>Firma: T-mobile</p>
-                <p>
+          <h1>Doświadczenie</h1>
+          <div class="timeline">
+            <div class="timeline-container left">
+              <div class="timeline-content">
+                <h2>09.2022-obecnie</h2>
+                <p class="experience-position">
+                  Stanowisko: Konsultant ds.Sprzedaży
+                </p>
+                <p><b>Firma: T-mobile</b></p>
+                <p class="experience-description">
                   Opis: Dążenie do realizacji wyznaczonych celów. Dbanie o
                   mienie pracodawcy. Sprzedaż produktów oraz dbanie o relację z
                   klientami. Dbałość o ochronę danych osobowych klientów.
@@ -76,12 +118,12 @@
                 </p>
               </div>
             </div>
-            <div class="timeline_container left">
-              <div class="content">
-                <p class="content_time">Czas: 07.2019-09.2022</p>
-                <p>Stanowisko: Menadżer</p>
-                <p>Firma: McDonald's KH Group Kristóf Hankó</p>
-                <p>
+            <div class="timeline-container right">
+              <div class="timeline-content">
+                <h2>07.2019-09.2022</h2>
+                <p class="experience-position">Stanowisko: Menadżer</p>
+                <p><b>Firma: McDonald's KH Group Kristóf Hankó</b></p>
+                <p class="experience-description">
                   Opis: Kierowanie zespołem pracowników. Ponoszenie
                   odpowiedzialności za powierzone mienie restauracji.
                   Wykonywanie i nadzorowanie czynności związanych z obrotem
@@ -90,12 +132,14 @@
                 </p>
               </div>
             </div>
-            <div class="timeline_container right">
-              <div class="timeline_content">
-                <p class="content_time">Czas: 04.2018-05.2018</p>
-                <p>Stanowisko: Stażysta w dziale marketingu</p>
-                <p>Firma: Trumpf Huettinger Sp. z o. o.</p>
-                <p>
+            <div class="timeline-container left">
+              <div class="timeline-content">
+                <h2>04.2018-05.2018</h2>
+                <p class="experience-position">
+                  Stanowisko: Stażysta w dziale marketingu
+                </p>
+                <p><b>Firma: Trumpf Huettinger Sp. z o. o.</b></p>
+                <p class="experience-description">
                   Opis: Pomoc przy organizowaniu wystawy produktów na targach
                   sprzedaży.
                 </p>
@@ -116,19 +160,20 @@
       <footer>
         <div id="contact">
           <h1>Kontakt</h1>
-          <ul>
-            <li>Telefon:</li>
-            <li>Mail</li>
-          </ul>
-          <ul>
-            <li>784925372</li>
-            <li>Maciej.dabrowski299@gmail.com</li>
-          </ul>
+          <div>
+            <p>Telefon: <a href="tel:+48784925372">784925372</a></p>
+            <p>
+              Mail:
+              <a href="mailto:maciej.dabrowski299@gmail.com"
+                >maciej.dabrowski299@gmail.com</a
+              >
+            </p>
+          </div>
         </div>
         <div>
           <h1>Formularz kontaktowy</h1>
 
-          <form action="przetwarzanie_formularza.php" method="POST">
+          <form action="przetwarzanie-formularza.php" method="POST">
             <label for="name">Imię:</label><br />
             <input type="text" id="name" name="name" required /><br /><br />
 
