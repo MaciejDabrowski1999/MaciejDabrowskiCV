@@ -11,8 +11,6 @@ let thumbnailSlide = [
     './assets/thumbnail-Ai-4-sectors.jpg',
     './assets/thumbnail-company-website.jpg',
     './assets/thumbnail-to-do-app.jpg'
-
-
 ]
 
 const activeFunction = () => {
@@ -45,6 +43,7 @@ const sliderPic = () => {
 const portfolioSliderStart = () => {
     portfolioItems[numSlide].style.width = '100%'
     portfolioItems[numSlide].style.height = '100%'
+    portfolioItems[numSlide].style.fontSize = '16px'
 }
 
 const portfolioItemSlider = (number) => {
@@ -53,10 +52,12 @@ const portfolioItemSlider = (number) => {
             slide.style.width = '15%'
             slide.style.height = '15%'
             slide.style.margin = '0px'
+            slide.style.fontSize = '0px'
         } else {
             slide.style.width = '100%'
             slide.style.height = '100%'
             slide.style.margin = '20px'
+            slide.style.fontSize = '16px'
         }
     })
 }

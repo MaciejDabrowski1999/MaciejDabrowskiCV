@@ -318,6 +318,8 @@ a {
     height: 30vh;
   }
   .portfolio-item {
+    
+    font-size: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,12 +330,13 @@ a {
     transition: margin 0.5s ease;
   }
   .portfolio-item a{
+    color: rgb(255,255,255);
   width: 100%;
   height: 100%;
   }
   .portfolio-thumbnail{
     width: 100%;
-    height: 100%;
+    height: 60%;
   }
   .portfolio-buttons{
     display: flex;
