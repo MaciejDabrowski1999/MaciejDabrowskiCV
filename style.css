@@ -371,7 +371,12 @@ a {
 		display: flex;
 		flex-direction: column;
 	}
+	.form-contact-box div {
+		display: flex;
+		justify-content: space-between;
+	}
 	.form-contact-input {
+		width: 40%;
 		margin: 10px 0;
 		padding: 0px 10px;
 		height: 30px;
