@@ -1,211 +1,214 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/5b34c87937.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Maciej Dąbrowski CV</title>
-  </head>
-  <body>
-    <div class="wrapper" id="home">
-      <header class="home">
-        <div>
-          <div class="menu">
-            <ul class="menu-list">
-              <li class="menu-item"><a href="#home">Home</a></li>
-              <li class="menu-item">
-                <a href="#professional">Umiejętności</a>
-              </li>
-              <li class="menu-item"><a href="#experience">Doświadczenie</a></li>
-              <li class="menu-item"><a href="#portfolio">Portfolio</a></li>
-              <li class="menu-item"><a href="#contact">Kontakt</a></li>
-            </ul>
-          </div>
-          <label for="checkMenu"
-            ><i class="fa-solid fa-bars menu-button-icon"></i
-          ></label>
-          <input type="checkbox" class="menu-button" id="checkMenu" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/5b34c87937.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>Maciej Dąbrowski CV</title>
+</head>
+
+<body>
+  <div class="wrapper" id="home">
+    <header class="home">
+      <div>
+        <div class="menu">
+          <ul class="menu-list">
+            <li class="menu-item"><a href="#home">Home</a></li>
+            <li class="menu-item">
+              <a href="#professional">Umiejętności</a>
+            </li>
+            <li class="menu-item"><a href="#experience">Doświadczenie</a></li>
+            <li class="menu-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="menu-item"><a href="#contact">Kontakt</a></li>
+          </ul>
         </div>
-        <div class="home-logo">
-          <div class="logo"></div>
+        <label for="checkMenu"><i class="fa-solid fa-bars menu-button-icon"></i></label>
+        <input type="checkbox" class="menu-button" id="checkMenu" />
+      </div>
+      <div class="home-logo">
+        <div class="logo"></div>
+      </div>
+    </header>
+    <main>
+      <section class="about-me">
+        <div class="about-me-name">
+          <h1>
+            <span>Cześć, </span>jestem <br />
+            Maciej Dąbrowski
+          </h1>
+          <p class="about-me-name-profession">Frontend Developer</p>
         </div>
-      </header>
-      <main>
-        <section class="about-me">
-          <div class="about-me-name">
-            <h1>
-              <span>Cześć, </span>jestem <br />
-              Maciej Dąbrowski
-            </h1>
-            <p class="about-me-name-profession">Frontend Developer</p>
-          </div>
-          <div class="about-me-description">
-            <p><b>Trochę o mnie.</b></p>
-            <p>
-              Jestem <b>pracowity</b>, lubię poznawać nowe rzeczy. Jestem
-              <b>chętny do nauki</b> i nie boję się wyzwań.
-              <b>Zawsze realizuje</b> postawione <b>cele</b>. Moją pasją jest
-              motoryacja, programowanie i jazda na rowerze.
-            </p>
-          </div>
-        </section>
-        <section class="professional" id="professional">
-          <div class="professional-shadow">
-            <div class="professional-shadow-box">
-              <h2 class="professional-title">Umięjętności</h2>
-              <p>Mój poziom zaznajomienia z software</p>
-              <div class="professional-list">
-                <div class="professional-list-container">
-                  <div>
-                    <p class="professional-list-name">JavaScript</p>
-                    <div class="professional-list-bar">
-                      <div class="js"></div>
-                    </div>
-                    <p>60%</p>
+        <div class="about-me-description">
+          <p><b>Trochę o mnie.</b></p>
+          <p>
+            Jestem <b>pracowity</b>, lubię poznawać nowe rzeczy. Jestem
+            <b>chętny do nauki</b> i nie boję się wyzwań.
+            <b>Zawsze realizuje</b> postawione <b>cele</b>. Moją pasją jest
+            motoryacja, programowanie i jazda na rowerze.
+          </p>
+        </div>
+      </section>
+      <section class="professional" id="professional">
+        <div class="professional-shadow">
+          <div class="professional-shadow-box">
+            <h2 class="professional-title">Umięjętności</h2>
+            <p>Mój poziom zaznajomienia z software</p>
+            <div class="professional-list">
+              <div class="professional-list-container">
+                <div>
+                  <p class="professional-list-name">JavaScript</p>
+                  <div class="professional-list-bar">
+                    <div class="js"></div>
                   </div>
-                  <div>
-                    <p class="professional-list-name">HTML & CSS</p>
-                    <div class="professional-list-bar">
-                      <div class="html"></div>
-                    </div>
-                    <p>80%</p>
+                  <p>60%</p>
+                </div>
+                <div>
+                  <p class="professional-list-name">HTML & CSS</p>
+                  <div class="professional-list-bar">
+                    <div class="html"></div>
                   </div>
-                  <div>
-                    <p class="professional-list-name">Excel</p>
-                    <div class="professional-list-bar">
-                      <div class="excel"></div>
-                    </div>
-                    <p>80%</p>
+                  <p>80%</p>
+                </div>
+                <div>
+                  <p class="professional-list-name">Excel</p>
+                  <div class="professional-list-bar">
+                    <div class="excel"></div>
                   </div>
-                  <div>
-                    <p class="professional-list-name">SQL</p>
-                    <div class="professional-list-bar">
-                      <div class="sql"></div>
-                    </div>
-                    <p>60%</p>
+                  <p>80%</p>
+                </div>
+                <div>
+                  <p class="professional-list-name">SQL</p>
+                  <div class="professional-list-bar">
+                    <div class="sql"></div>
                   </div>
+                  <p>60%</p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section class="experience" id="experience">
-          <h1>Doświadczenie</h1>
-          <div class="timeline">
-            <div class="timeline-container left">
-              <div class="timeline-content">
-                <h2>09.2022-obecnie</h2>
-                <p class="experience-position">
-                  Stanowisko: Konsultant ds.Sprzedaży
-                </p>
-                <p><b>Firma: T-mobile</b></p>
-                <p class="experience-description">
-                  Opis: Dążenie do realizacji wyznaczonych celów. Dbanie o
-                  mienie pracodawcy. Sprzedaż produktów oraz dbanie o relację z
-                  klientami. Dbałość o ochronę danych osobowych klientów.
-                  Sporządzanie raportów sprzedażowych.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-container right">
-              <div class="timeline-content">
-                <h2>07.2019-09.2022</h2>
-                <p class="experience-position">Stanowisko: Menadżer</p>
-                <p><b>Firma: McDonald's KH Group Kristóf Hankó</b></p>
-                <p class="experience-description">
-                  Opis: Kierowanie zespołem pracowników. Ponoszenie
-                  odpowiedzialności za powierzone mienie restauracji.
-                  Wykonywanie i nadzorowanie czynności związanych z obrotem
-                  gotówki. Sporządzanie raportów. Dążenie do osiągnięcia
-                  wyznaczonych celów. Rozwiązywanie problemów.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-container left">
-              <div class="timeline-content">
-                <h2>04.2018-05.2018</h2>
-                <p class="experience-position">
-                  Stanowisko: Stażysta w dziale marketingu
-                </p>
-                <p><b>Firma: Trumpf Huettinger Sp. z o. o.</b></p>
-                <p class="experience-description">
-                  Opis: Pomoc przy organizowaniu wystawy produktów na targach
-                  sprzedaży.
-                </p>
-              </div>
+        </div>
+      </section>
+      <section class="experience" id="experience">
+        <h1>Doświadczenie</h1>
+        <div class="timeline">
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h2>09.2022-obecnie</h2>
+              <p class="experience-position">
+                Stanowisko: Konsultant ds.Sprzedaży
+              </p>
+              <p><b>Firma: T-mobile</b></p>
+              <p class="experience-description">
+                Opis: Dążenie do realizacji wyznaczonych celów. Dbanie o
+                mienie pracodawcy. Sprzedaż produktów oraz dbanie o relację z
+                klientami. Dbałość o ochronę danych osobowych klientów.
+                Sporządzanie raportów sprzedażowych.
+              </p>
             </div>
           </div>
-        </section>
-        <section class="portfolio" id="portfolio">
-          <div class="portfolio-header">
-            <h2>Portfolio</h2>
-            <p>Moje ostatnie prace => Zobacz więcej</p>
-          </div>
-          <div class="portfolio-list">
-            <div class="portfolio-item">
-              <a href="https://currency-exchange-project-js.netlify.app/"
-                ><div class="portfolio-thumbnail">
-                </div>
-                <p>Kantor wymiany walut</p>
-              </a>
+          <div class="timeline-container right">
+            <div class="timeline-content">
+              <h2>07.2019-09.2022</h2>
+              <p class="experience-position">Stanowisko: Menadżer</p>
+              <p><b>Firma: McDonald's KH Group Kristóf Hankó</b></p>
+              <p class="experience-description">
+                Opis: Kierowanie zespołem pracowników. Ponoszenie
+                odpowiedzialności za powierzone mienie restauracji.
+                Wykonywanie i nadzorowanie czynności związanych z obrotem
+                gotówki. Sporządzanie raportów. Dążenie do osiągnięcia
+                wyznaczonych celów. Rozwiązywanie problemów.
+              </p>
             </div>
-            <div class="portfolio-item"><a href="https://mellifluous-cassata-c943bd.netlify.app/"><div class="portfolio-thumbnail">
-            </div><p>Strona ofertowa</p></a></div>
-            <div class="portfolio-item"><a href="https://mobile-version-html-project.netlify.app/"><div class="portfolio-thumbnail">
-            </div><p>Responsywna strona firmowa</p></a>
-            
           </div>
-          <div class="portfolio-item"><a href="https://zingy-entremet-c16f6a.netlify.app/"><div class="portfolio-thumbnail"></div><p>Aplikacja do tworzenia zadań</p></a></div>
-          </div>
-          <div class="portfolio-buttons">
-            <button class="prev-button portfolio-button"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="next-button portfolio-button"><i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <div id="contact">
-          <h1>Kontakt</h1>
-          <div>
-            <p>Telefon: <a href="tel:+48784925372">784925372</a></p>
-            <p>
-              Mail:
-              <a href="mailto:maciej.dabrowski299@gmail.com"
-                >maciej.dabrowski299@gmail.com</a
-              >
-            </p>
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h2>04.2018-05.2018</h2>
+              <p class="experience-position">
+                Stanowisko: Stażysta w dziale marketingu
+              </p>
+              <p><b>Firma: Trumpf Huettinger Sp. z o. o.</b></p>
+              <p class="experience-description">
+                Opis: Pomoc przy organizowaniu wystawy produktów na targach
+                sprzedaży.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
+      <section class="portfolio" id="portfolio">
+        <div class="portfolio-header">
+          <h2>Portfolio</h2>
+          <p>Moje ostatnie prace => Zobacz więcej</p>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item">
+            <a href="https://currency-exchange-project-js.netlify.app/">
+              <div class="portfolio-thumbnail"></div>
+              <p>Kantor wymiany walut</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://mellifluous-cassata-c943bd.netlify.app/">
+              <div class="portfolio-thumbnail"></div>
+              <p>Strona ofertowa</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://mobile-version-html-project.netlify.app/">
+              <div class="portfolio-thumbnail"></div>
+              <p>Responsywna strona firmowa</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://zingy-entremet-c16f6a.netlify.app/">
+              <div class="portfolio-thumbnail"></div>
+              <p>Aplikacja do tworzenia zadań</p>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-buttons">
+          <button class="prev-button portfolio-button">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="next-button portfolio-button">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+    <section class="form-contact">
+      <h2>Skontaktuj się ze mną</h2>
+      <form class="form-contact-box" action="przetwarzanie-formularza.php" method="POST">
         <div>
-          <h1>Formularz kontaktowy</h1>
-
-          <form action="przetwarzanie-formularza.php" method="POST">
-            <label for="name">Imię:</label><br />
-            <input type="text" id="name" name="name" required /><br /><br />
-
-            <label for="email">Adres e-mail:</label><br />
-            <input type="email" id="email" name="email" required /><br /><br />
-
-            <label for="message">Wiadomość:</label><br />
-            <textarea id="message" name="message" required></textarea
-            ><br /><br />
-
-            <input type="submit" value="Wyślij" />
-          </form>
+          <input type="text" id="name" name="name" placeholder="Imię" class="form-contact-input" required />
+          <input type="email" id="email" name="email" placeholder="Email" class="form-contact-input" required />
         </div>
-      </footer>
-    </div>
-    <script src="index.js"></script>
-  </body>
+        <textarea id="message" name="message" placeholder="Wiadomość" class="form-contact-message" required></textarea>
+      </form>
+      <input type="submit" value="Wyślij" class="form-contact-button" />
+    </section>
+    <footer>
+      <div id="contact">
+        <h1>Kontakt</h1>
+        <div>
+          <p>Telefon: <a href="tel:+48784925372">784925372</a></p>
+          <p>
+            Mail:
+            <a href="mailto:maciej.dabrowski299@gmail.com">maciej.dabrowski299@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+
 </html>

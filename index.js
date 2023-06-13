@@ -7,83 +7,82 @@ const portfolioPrevBnt = document.querySelector('.prev-button')
 
 let numSlide = 0
 let thumbnailSlide = [
-    './assets/thumbnail-currency-excange.jpg',
-    './assets/thumbnail-Ai-4-sectors.jpg',
-    './assets/thumbnail-company-website.jpg',
-    './assets/thumbnail-to-do-app.jpg'
+	'./assets/thumbnail-currency-excange.jpg',
+	'./assets/thumbnail-Ai-4-sectors.jpg',
+	'./assets/thumbnail-company-website.jpg',
+	'./assets/thumbnail-to-do-app.jpg',
 ]
 
 const activeFunction = () => {
-    portfolioSliderStart()
-    sliderPic()
-    menuList.addEventListener('click', menuHide)
-    hamburgerBnt.addEventListener('click', showMenu)
-    portfolioNextBnt.addEventListener('click', nextPortfolio)
-    portfolioPrevBnt.addEventListener('click', prevPortfolio)
+	portfolioSliderStart()
+	sliderPic()
+	menuList.addEventListener('click', menuHide)
+	hamburgerBnt.addEventListener('click', showMenu)
+	portfolioNextBnt.addEventListener('click', nextPortfolio)
+	portfolioPrevBnt.addEventListener('click', prevPortfolio)
 }
 
 const showMenu = () => {
-    if (hamburgerBnt.checked) {
-        menuList.style.left = '0'
-    } else {
-        menuList.style.left = '-100%'
-    }
+	if (hamburgerBnt.checked) {
+		menuList.style.left = '0'
+	} else {
+		menuList.style.left = '-100%'
+	}
 }
 const menuHide = () => {
-    menuList.style.left = '-100%'
+	menuList.style.left = '-100%'
 }
 const sliderPic = () => {
-    portfolioTumbnail.forEach((el, index) =>{
-        el.style.backgroundImage = `url(${thumbnailSlide[index]})`
-        el.style.backgroundSize = 'contain';
-        el.style.backgroundRepeat = 'no-repeat';
-    })
+	portfolioTumbnail.forEach((el, index) => {
+		el.style.backgroundImage = `url(${thumbnailSlide[index]})`
+		el.style.backgroundSize = 'contain'
+		el.style.backgroundRepeat = 'no-repeat'
+	})
 }
 
 const portfolioSliderStart = () => {
-    portfolioItems[numSlide].style.width = '100%'
-    portfolioItems[numSlide].style.height = '100%'
-    portfolioItems[numSlide].style.fontSize = '16px'
+	portfolioItems[numSlide].style.width = '100%'
+	portfolioItems[numSlide].style.height = '100%'
+	portfolioItems[numSlide].style.fontSize = '16px'
 }
 
-const portfolioItemSlider = (number) => {
-    portfolioItems.forEach((slide, index) => {
-        if (index != number) {
-            slide.style.width = '15%'
-            slide.style.height = '15%'
-            slide.style.margin = '0px'
-            slide.style.fontSize = '0px'
-        } else {
-            slide.style.width = '100%'
-            slide.style.height = '100%'
-            slide.style.margin = '20px'
-            slide.style.fontSize = '16px'
-        }
-    })
+const portfolioItemSlider = number => {
+	portfolioItems.forEach((slide, index) => {
+		if (index != number) {
+			slide.style.width = '15%'
+			slide.style.height = '15%'
+			slide.style.margin = '0px'
+			slide.style.fontSize = '0px'
+		} else {
+			slide.style.width = '100%'
+			slide.style.height = '100%'
+			slide.style.margin = '20px'
+			slide.style.fontSize = '16px'
+		}
+	})
 }
-const portfolioSlider = (number) => {
-    if (number <= portfolioItems.length - 1) {
-        portfolioItemSlider(number)
-    } else if (number >= portfolioItems.length - 1) {
-        numSlide = 0
-        portfolioItemSlider(numSlide)
-    } else if (number <= 0) {
-        numSlide = portfolioItems.length - 1
-        portfolioItemSlider(numSlide)
-    }
-
+const portfolioSlider = number => {
+	if (number <= portfolioItems.length - 1) {
+		portfolioItemSlider(number)
+	} else if (number >= portfolioItems.length - 1) {
+		numSlide = 0
+		portfolioItemSlider(numSlide)
+	} else if (number <= 0) {
+		numSlide = portfolioItems.length - 1
+		portfolioItemSlider(numSlide)
+	}
 }
 
 const nextPortfolio = () => {
-    numSlide++
-    portfolioSlider(numSlide)
+	numSlide++
+	portfolioSlider(numSlide)
 }
 const prevPortfolio = () => {
-    if (numSlide === 0) {
-        numSlide = portfolioItems.length
-    }
-    numSlide--
-    portfolioSlider(numSlide)
+	if (numSlide === 0) {
+		numSlide = portfolioItems.length
+	}
+	numSlide--
+	portfolioSlider(numSlide)
 }
 
 document.addEventListener('DOMContentLoaded', activeFunction)
