@@ -136,5 +136,31 @@ function validateForm() {
 	}
 	return true
 }
+$(document).ready(function () {
+	$('form').submit(function (event) {
+		event.preventDefault() // Zapobiega domyślnemu zachowaniu przycisku submit (przeładowanie strony)
+
+		var formData = $(this).serialize() // Pobierz dane z formularza
+
+		$.ajax({
+			url: 'przetwarzanie-formularza.php', // Adres URL pliku PHP obsługującego przetwarzanie formularza
+			type: 'POST',
+			data: formData,
+			success: function (response) {
+				// Tutaj możesz obsłużyć odpowiedź z serwera, np. wyświetlić komunikat potwierdzający
+
+				// Przykład: wyświetlenie komunikatu potwierdzającego
+				alert('Formularz został przesłany.')
+
+				// Możesz również wyczyścić pola formularza po pomyślnym przesłaniu danych
+				$('form')[0].reset()
+			},
+			error: function (xhr, status, error) {
+				// Obsłuż błędy żądania, jeśli wystąpią
+				console.log(xhr.responseText)
+			},
+		})
+	})
+})
 
 document.addEventListener('DOMContentLoaded', activeFunction)
