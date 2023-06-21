@@ -1,16 +1,23 @@
-const hamburgerBnt = document.querySelector('.menu-button')
-const menuList = document.querySelector('.menu-list')
-const portfolioItems = document.querySelectorAll('.portfolio-item')
-const portfolioTumbnail = document.querySelectorAll('.portfolio-thumbnail')
+const hamburgerBnt = document.querySelector('.home div .button')
+const menuList = document.querySelector('.menu .list')
+const portfolioItems = document.querySelectorAll('.portfolio .list .item')
+const portfolioTumbnail = document.querySelectorAll('.portfolio .list .item .thumbnail')
 const portfolioNextBnt = document.querySelector('.next-button')
 const portfolioPrevBnt = document.querySelector('.prev-button')
+const inputName = document.querySelector('.input-name')
+const inputPhone = document.querySelector('.input-phone')
+const inputEmail = document.querySelector('.input-email')
+const message = document.querySelector('.message')
+const submit = document.querySelector('.form-contact .button')
 
+let mql = window.matchMedia('(min-width: 768px)')
+let mqlmin = window.matchMedia('(max-width: 768px)')
 let numSlide = 0
 let thumbnailSlide = [
-	'./assets/thumbnail-currency-excange.jpg',
-	'./assets/thumbnail-Ai-4-sectors.jpg',
-	'./assets/thumbnail-company-website.jpg',
-	'./assets/thumbnail-to-do-app.jpg',
+	'/assets/thumbnail-currency-excange.jpg',
+	'/assets/thumbnail-Ai-4-sectors.jpg',
+	'/assets/thumbnail-company-website.jpg',
+	'/assets/thumbnail-to-do-app.jpg',
 ]
 
 const activeFunction = () => {
@@ -20,6 +27,8 @@ const activeFunction = () => {
 	hamburgerBnt.addEventListener('click', showMenu)
 	portfolioNextBnt.addEventListener('click', nextPortfolio)
 	portfolioPrevBnt.addEventListener('click', prevPortfolio)
+	showMenuDesktop()
+	submit.addEventListener('click', validateForm)
 }
 
 const showMenu = () => {
@@ -29,9 +38,20 @@ const showMenu = () => {
 		menuList.style.left = '-100%'
 	}
 }
+const showMenuDesktop = () => {
+	mql.onchange = e => {
+		if (e.matches) {
+			menuList.style.left = '0'
+		} else {
+			menuList.style.left = '-100%'
+		}
+	}
+}
+
 const menuHide = () => {
 	menuList.style.left = '-100%'
 }
+
 const sliderPic = () => {
 	portfolioTumbnail.forEach((el, index) => {
 		el.style.backgroundImage = `url(${thumbnailSlide[index]})`
@@ -83,6 +103,38 @@ const prevPortfolio = () => {
 	}
 	numSlide--
 	portfolioSlider(numSlide)
+}
+
+function validateForm() {
+	if (inputName.value.trim() === '' || inputEmail.value.trim() === '' || message.value.trim() === '') {
+		inputName.classList.toggle('input-error')
+		inputEmail.classList.toggle('input-error')
+		message.classList.toggle('input-error')
+		alert('Proszę wypełnić wszystkie pola formularza.')
+		setTimeout(() => {
+			inputName.classList.toggle('input-error')
+			inputEmail.classList.toggle('input-error')
+			message.classList.toggle('input-error')
+		}, 3000)
+		return false
+	}
+	if (inputPhone.value.trim() !== '' && !/^\d{9}$/.test(inputPhone.value)) {
+		alert('Proszę wprowadzić numer telefonu składający się z 9 cyfr.')
+		inputPhone.classList.toggle('input-error')
+		setTimeout(() => {
+			inputPhone.classList.toggle('input-error')
+		}, 3000)
+		return false
+	}
+	if (!/\S+@\S+\.\S+/.test(inputEmail.value)) {
+		inputEmail.classList.toggle('input-error')
+		alert('Proszę wprowadzić poprawny adres email.')
+		setTimeout(() => {
+			inputEmail.classList.toggle('input-error')
+		}, 3000)
+		return false
+	}
+	return true
 }
 
 document.addEventListener('DOMContentLoaded', activeFunction)
