@@ -4,6 +4,9 @@
 	padding: 0;
 	list-style: none;
 }
+@mixin margin-10 {
+	margin: 0 20px;
+}
 body {
 	font-family: $font;
 	@include resetList;
@@ -11,46 +14,196 @@ body {
 
 header {
 	@include resetList;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	height: 80px;
 	background-color: $menu-color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	.menu {
+
+	.nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+
 		.button {
 			width: 50%;
 			height: 100%;
-			.lines {
-				.line {
-					width: 40px;
-					height: 2px;
-					margin: 20px;
-					background-color: black;
-				}
+			z-index: 100;
+			.menu {
+				background-color: transparent;
+				border: none;
+				cursor: pointer;
+				display: flex;
+				padding: 0;
 			}
+			.line {
+				fill: none;
+				stroke: black;
+				stroke-width: 6;
+				transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+					stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+			}
+			.line1 {
+				stroke-dasharray: 60 207;
+				stroke-width: 6;
+			}
+			.line2 {
+				stroke-dasharray: 60 60;
+				stroke-width: 6;
+			}
+			.line3 {
+				stroke-dasharray: 60 207;
+				stroke-width: 6;
+			}
+			.opened .line1 {
+				stroke-dasharray: 90 207;
+				stroke-dashoffset: -134;
+				stroke-width: 6;
+			}
+			.opened .line2 {
+				stroke-dasharray: 1 60;
+				stroke-dashoffset: -30;
+				stroke-width: 6;
+			}
+			.opened .line3 {
+				stroke-dasharray: 90 207;
+				stroke-dashoffset: -134;
+				stroke-width: 6;
+			}
+
 			input {
 				display: none;
 			}
 		}
-		.list {
-			display: none;
-			background-color: $third-color;
-			position: relative;
-			left: -100%;
-			.item {
-				text-transform: uppercase;
-				list-style: none;
-			}
-		}
+
 		.logo {
 			margin: 10px 20px 10px 0;
 			width: 45%;
 			height: 70px;
 		}
+	}
+	.list {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		padding: 0;
+		top: 0;
+		left: -100%;
+		margin-top: 80px;
+		z-index: 99;
+		background-color: $third-color;
+		transition: left 1s ease;
+		.item {
+			text-align: center;
+			font-size: 36px;
+			margin: 25px 0 0 0;
+			text-transform: uppercase;
+			list-style: none;
+		}
+	}
+}
+main {
+	margin: 80px 0 0 0;
+	.title {
+		@include margin-10;
+		height: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		h1 {
+			width: 80%;
+			font-size: 24px;
+			span {
+				color: $primary-color;
+			}
+		}
+	}
+	.about-me {
+		height: 200px;
+		background-color: $primary-color;
+		color: white;
+		h2 {
+			@include resetList;
+			padding: 20px 20px 0 20px;
+		}
+		p {
+			width: 80%;
+			font-weight: 500;
+			@include margin-10;
+		}
+	}
+	.banner {
+		height: 400px;
+		font-weight: 400;
+		text-align: center;
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.bnt {
+				width: 60%;
+				height: 70px;
+				margin: 25px 0 0 0;
+				background-color: $secondary-color;
+				border: none;
+				border-radius: 10px;
+				font-size: 24px;
+				font-weight: 500;
+				color: white;
+				text-transform: capitalize;
+			}
+		}
+	}
+	.portfolio {
+		height: 555px;
+		background-color: $primary-color;
+		h2 {
+			text-align: center;
+			text-transform: uppercase;
+			@include margin-10;
+			padding-top: 20px;
+			color: white;
+		}
+		.container {
+			margin: 20px auto 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			width: 90%;
+			.thumbnail {
+				width: 170px;
+				height: 150px;
+				margin: 0;
+				padding: 0;
+				a {
+					width: 100%;
+					height: 100%;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+footer {
+	@include resetList;
+	display: flex;
+	flex-direction: column;
+	background-color: $third-color;
+	text-align: center;
+	h2 {
+		text-transform: uppercase;
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	.socials {
+		font-size: 36px;
+		margin: 20px;
 	}
 }
