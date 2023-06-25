@@ -143,7 +143,7 @@ $(document).ready(function () {
 		var formData = $(this).serialize() // Pobierz dane z formularza
 
 		$.ajax({
-			url: 'przetwarzanie-formularza.php', // Adres URL pliku PHP obsługującego przetwarzanie formularza
+			url: 'formcontact.php', // Adres URL pliku PHP obsługującego przetwarzanie formularza
 			type: 'POST',
 			data: formData,
 			success: function (response) {
