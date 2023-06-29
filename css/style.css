@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 header {
@@ -29,45 +30,31 @@ header .nav .button {
   height: 100%;
   z-index: 100;
 }
-header .nav .button .menu {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  padding: 0;
-}
 header .nav .button .line {
-  fill: none;
-  stroke: black;
-  stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin: 20px;
+  transition: all 0.5s ease;
+}
+header .nav .button .line1Position {
+  top: 22px;
 }
 header .nav .button .line1 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
+  margin: 20px;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+header .nav .button .line2Position {
+  top: 5px;
 }
 header .nav .button .line2 {
-  stroke-dasharray: 60 60;
-  stroke-width: 6;
+  background-color: rgba(0, 0, 0, 0);
 }
 header .nav .button .line3 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
-header .nav .button .opened .line1 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
-}
-header .nav .button .opened .line2 {
-  stroke-dasharray: 1 60;
-  stroke-dashoffset: -30;
-  stroke-width: 6;
-}
-header .nav .button .opened .line3 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease;
 }
 header .nav .button input {
   display: none;
@@ -95,6 +82,10 @@ header .list .item {
   margin: 25px 0 0 0;
   text-transform: uppercase;
   list-style: none;
+}
+header .list .item a {
+  text-decoration: none;
+  color: black;
 }
 
 main {
@@ -202,4 +193,99 @@ footer a {
 footer .socials {
   font-size: 36px;
   margin: 20px;
+}
+
+@media (min-width: 650px) {
+  header {
+    height: 150px;
+  }
+  header .nav .button {
+    display: none;
+  }
+  header .nav .list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: auto;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  header .nav .list .item {
+    font-size: 24px;
+    margin: 0 20px 20px 20px;
+  }
+  main {
+    margin: 150px 0 0 0;
+  }
+  main .title h1 {
+    font-size: 32px;
+  }
+  main .about-me p {
+    font-size: 20px;
+  }
+  main .banner {
+    height: 500px;
+  }
+  main .banner .container .bnt {
+    height: 90px;
+  }
+  main .portfolio {
+    height: 400px;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    height: 150px;
+  }
+  header .nav .button {
+    display: none;
+  }
+  header .nav .list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: auto;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  header .nav .list .item {
+    font-size: 24px;
+    margin: 0 20px 20px 20px;
+  }
+  header .nav .list .item a:hover {
+    color: rgb(19, 96, 164);
+  }
+  header .nav .list .item:hover {
+    color: rgb(19, 96, 164);
+  }
+  main {
+    margin: 150px 0 0 0;
+  }
+  main .title h1 {
+    font-size: 32px;
+  }
+  main .about-me p {
+    font-size: 20px;
+  }
+  main .banner {
+    height: 500px;
+  }
+  main .banner .container .bnt {
+    height: 90px;
+  }
+  main .banner .container .bnt:hover {
+    background-color: rgb(19, 96, 164);
+  }
+  main .portfolio {
+    height: 400px;
+  }
+  main .portfolio .container .thumbnail {
+    transition: scale 1s ease;
+    background-color: yellow;
+  }
+  main .portfolio .container .thumbnail:hover {
+    scale: 1.1;
+  }
 }/*# sourceMappingURL=style.css.map */
