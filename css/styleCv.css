@@ -71,9 +71,36 @@ a {
   margin: 10px;
   font-size: 28px;
 }
-.home div {
-  font-size: 36px;
-  margin: 0 10px;
+.home div .inputLabel {
+  width: 50%;
+  height: 100%;
+  z-index: 100;
+}
+.home div .inputLabel .line {
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin: 20px;
+  transition: all 0.5s ease;
+}
+.home div .inputLabel .line1Position {
+  top: 22px;
+}
+.home div .inputLabel .line1 {
+  margin: 20px;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+.home div .inputLabel .line2Position {
+  top: 5px;
+}
+.home div .inputLabel .line2 {
+  background-color: rgba(0, 0, 0, 0);
+}
+.home div .inputLabel .line3 {
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease;
 }
 .home div .button {
   display: none;

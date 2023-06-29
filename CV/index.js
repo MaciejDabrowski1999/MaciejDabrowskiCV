@@ -1,4 +1,5 @@
 const hamburgerBnt = document.querySelector('.home div .button')
+const lines = document.querySelectorAll('.line')
 const menuList = document.querySelector('.menu .list')
 const portfolioItems = document.querySelectorAll('.portfolio .list .item')
 const portfolioTumbnail = document.querySelectorAll('.portfolio .list .item .thumbnail')
@@ -10,6 +11,7 @@ const inputEmail = document.querySelector('.input-email')
 const message = document.querySelector('.message')
 const submit = document.querySelector('.form-contact .button')
 
+let media = window.matchMedia('(min-width:650px)')
 let mql = window.matchMedia('(min-width: 768px)')
 let mqlmin = window.matchMedia('(max-width: 768px)')
 let numSlide = 0
@@ -29,13 +31,24 @@ const activeFunction = () => {
 	portfolioPrevBnt.addEventListener('click', prevPortfolio)
 	showMenuDesktop()
 	submit.addEventListener('click', validateForm)
+	media.addListener(mediaQuery)
 }
 
 const showMenu = () => {
 	if (hamburgerBnt.checked) {
 		menuList.style.left = '0'
+		lines[1].style.top = '20px'
+		lines[2].style.top = '20px'
+		lines[1].classList.toggle('line1')
+		lines[0].classList.toggle('line2')
+		lines[2].classList.toggle('line3')
 	} else {
 		menuList.style.left = '-100%'
+		lines[1].style.top = '22px'
+		lines[2].style.top = '40px'
+		lines[1].classList.toggle('line1')
+		lines[0].classList.toggle('line2')
+		lines[2].classList.toggle('line3')
 	}
 }
 const showMenuDesktop = () => {
@@ -47,9 +60,33 @@ const showMenuDesktop = () => {
 		}
 	}
 }
+const mediaQuery = () => {
+	//animation for menu
+	if (media.matches === false && lines[0].classList.contains('line1')) {
+		lines[1].classList.toggle('line1')
+		lines[0].classList.toggle('line2')
+		lines[2].classList.toggle('line3')
+		menuList.style.left = '-100%'
+		hamburgerBnt.checked = false
+	} else if (media.matches) {
+		lines[1].classList.remove('line1')
+		lines[0].classList.remove('line2')
+		lines[2].classList.remove('line3')
+	}
+}
 
 const menuHide = () => {
-	menuList.style.left = '-100%'
+	if (media.matches === false) {
+		menuList.style.left = '-100%'
+		hamburgerBnt.checked = false
+		lines[1].style.top = '22px'
+		lines[2].style.top = '40px'
+		lines[1].classList.toggle('line1')
+		lines[0].classList.toggle('line2')
+		lines[2].classList.toggle('line3')
+	} else {
+		menuList.style.left = '0'
+	}
 }
 
 const sliderPic = () => {

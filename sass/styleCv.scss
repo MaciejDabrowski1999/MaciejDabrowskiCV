@@ -51,6 +51,7 @@ a {
 			margin: 0 20px 0 0;
 		}
 	}
+
 	.menu {
 		.list {
 			display: block;
@@ -71,8 +72,37 @@ a {
 		}
 	}
 	div {
-		font-size: 36px;
-		margin: 0 10px;
+		.inputLabel {
+			width: 50%;
+			height: 100%;
+			z-index: 100;
+			.line {
+				position: absolute;
+				width: 40px;
+				height: 2px;
+				background-color: black;
+				margin: 20px;
+				transition: all 0.5s ease;
+			}
+			.line1Position {
+				top: 22px;
+			}
+			.line1 {
+				margin: 20px;
+				transform: rotate(45deg);
+				transition: transform 0.5s ease;
+			}
+			.line2Position {
+				top: 5px;
+			}
+			.line2 {
+				background-color: rgba($color: #000000, $alpha: 0);
+			}
+			.line3 {
+				transform: rotate(-45deg);
+				transition: transform 0.5s ease;
+			}
+		}
 		.button {
 			display: none;
 		}
