@@ -306,4 +306,13 @@ footer {
 			}
 		}
 	}
+	footer {
+		.socials {
+			a {
+				.icon:hover {
+					color: $primary-color;
+				}
+			}
+		}
+	}
 }

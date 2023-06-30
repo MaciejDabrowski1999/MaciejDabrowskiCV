@@ -54,6 +54,7 @@ a {
 
 	.menu {
 		.list {
+			text-align: center;
 			display: block;
 			position: absolute;
 			transition: left 1s ease;
@@ -531,7 +532,7 @@ footer {
 			}
 		}
 		div {
-			.icon {
+			.inputLabel {
 				display: none;
 			}
 			.button {

@@ -56,6 +56,7 @@ a {
   margin: 0 20px 0 0;
 }
 .home .menu .list {
+  text-align: center;
   display: block;
   position: absolute;
   transition: left 1s ease;
@@ -498,7 +499,7 @@ footer .contact .phone a {
     align-items: center;
     position: relative;
   }
-  .home div .icon {
+  .home div .inputLabel {
     display: none;
   }
   .home div .button {
