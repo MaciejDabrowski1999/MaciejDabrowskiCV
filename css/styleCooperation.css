@@ -1,4 +1,70 @@
-main {
-  margin: 150px 0 0 0;
-  height: 300px;
+.nav {
+  position: static;
+}
+
+.main {
+  margin: 80px 0 0 0;
+}
+.main .banner {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  background-color: rgb(19, 96, 164);
+  text-align: center;
+  border-radius: 10px;
+  padding: 0 0 20px 0;
+}
+.main .banner h1 {
+  padding: 10px 0 0 0;
+}
+.main .banner p {
+  width: 80%;
+  margin: 0 auto;
+  letter-spacing: 1.05px;
+  line-height: 1.5;
+}
+.main .list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+}
+.main .list li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .list li button {
+  width: 50%;
+  height: 100px;
+  background-color: rgb(44, 169, 229);
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 650px) {
+  .main {
+    margin: 150px 0 0 0;
+  }
+  .main .list li button {
+    height: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .main {
+    margin: 150px 0 0 0;
+  }
+  .main .list li button {
+    height: 60px;
+  }
+  .main .list li button:hover {
+    background-color: rgb(19, 96, 164);
+  }
 }/*# sourceMappingURL=styleCooperation.css.map */

@@ -1,6 +1,78 @@
 @import 'variables';
 
-main {
-	margin: 150px 0 0 0;
-	height: 300px;
+.nav {
+	position: static;
+}
+.main {
+	margin: 80px 0 0 0;
+	.banner {
+		width: 80%;
+		margin: 0 auto;
+		color: white;
+		background-color: $primary-color;
+		text-align: center;
+		border-radius: 10px;
+		padding: 0 0 20px 0;
+		h1 {
+			padding: 10px 0 0 0;
+		}
+		p {
+			width: 80%;
+			margin: 0 auto;
+			letter-spacing: 1.05px;
+			line-height: 1.5;
+		}
+	}
+	.list {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 0;
+		li {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			button {
+				width: 50%;
+				height: 100px;
+				background-color: $secondary-color;
+				border-radius: 10px;
+				border: none;
+				margin: 10px;
+				font-size: 18px;
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+@media (min-width: 650px) {
+	.main {
+		margin: 150px 0 0 0;
+		.list {
+			li {
+				button {
+					height: 80px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.main {
+		margin: 150px 0 0 0;
+		.list {
+			li {
+				button {
+					height: 60px;
+				}
+				button:hover {
+					background-color: $primary-color;
+				}
+			}
+		}
+	}
 }
